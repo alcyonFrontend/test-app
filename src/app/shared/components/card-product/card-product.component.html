@@ -1,0 +1,24 @@
+<mat-card *ngIf="product">
+  <div class="pointer"
+       [routerLink]="['product', product?.id]">
+    <mat-card-header>
+      <mat-card-title>
+        {{ product?.name }}
+      </mat-card-title>
+    </mat-card-header>
+
+    <img mat-card-image
+         [src]="product?.picture">
+  </div>
+  <mat-card-actions>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <button mat-icon-button
+              color="accent">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <span class="font-bold">
+        {{ product?.price | currency:'EUR':'symbol':'1.2-2' }}
+      </span>
+    </div>
+  </mat-card-actions>
+</mat-card>
