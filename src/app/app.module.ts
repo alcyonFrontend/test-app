@@ -12,6 +12,10 @@ import {SharedModule} from "@shared/shared.module";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {registerLocaleData} from "@angular/common";
 import {RouterModule} from "@angular/router";
+import {EffectsModule} from "@ngrx/effects";
+import {ProductEffect} from "@core/store/effects";
+import {StoreModule} from "@ngrx/store";
+import {reducers} from "@core/store/app.reducer";
 registerLocaleData(localFr);
 
 @NgModule({
@@ -28,7 +32,11 @@ registerLocaleData(localFr);
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    SharedModule
+    SharedModule,
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([
+      ProductEffect
+    ]),
   ],
   providers: [
     {
