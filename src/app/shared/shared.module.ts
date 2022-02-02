@@ -7,23 +7,36 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {CommonModule} from "@angular/common";
 import {BrowserModule} from "@angular/platform-browser";
 import {RouterModule} from "@angular/router";
+import {ToolbarSearchComponent} from './components/toolbar-search/toolbar-search.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
+import {MatOptionModule} from "@angular/material/core";
+import {FormsModule} from "@angular/forms";
 
 const COMPONENTS: any[] = [
-  CardProductComponent
+  CardProductComponent,
+  ToolbarSearchComponent
 ];
 
 @NgModule({
   declarations: [
-    ...COMPONENTS
+    ...COMPONENTS,
   ],
   imports: [
     CommonModule,
     BrowserModule,
     RouterModule,
+    FlexLayoutModule,
+    FormsModule,
+    // Material
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    FlexLayoutModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatOptionModule
   ],
   exports: [
     ...COMPONENTS
