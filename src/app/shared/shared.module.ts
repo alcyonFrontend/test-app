@@ -13,10 +13,12 @@ import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import {MatOptionModule} from "@angular/material/core";
 import {FormsModule} from "@angular/forms";
+import { RatingProductComponent } from './components/rating-product/rating-product.component';
 
 const COMPONENTS: any[] = [
   CardProductComponent,
-  ToolbarSearchComponent
+  ToolbarSearchComponent,
+  RatingProductComponent,
 ];
 
 @NgModule({
