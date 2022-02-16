@@ -1,6 +1,5 @@
 ## A propos du challenge
 
-
 Il s’agit d'implémenter les fonctionnalités demandées en respectant l'architecture **NgRX**
 
 ![Alt text](Alcyon-Test-Frontend.png?raw=true "Alcyon Test Frontend")
