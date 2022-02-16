@@ -11,7 +11,7 @@ Il s’agit d'implémenter les fonctionnalités demandées en respectant l'archi
 - Chercher un produit par mot clé.
 - Trier les produits par nom / prix / classement
 - Consulter le détail d’un produit
-- Ajouter / supprimer un produit de mes favoris
+- Ajouter / supprimer un produit sur les favoris
 
 ## Evaluation
 Votre code sera évalué par : la sémantique, la structure, la lisibilité, la taille, entre autres facteurs.
