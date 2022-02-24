@@ -12,6 +12,32 @@ const INITIAL_STATE: ProductState = productAdapter.getInitialState({
 export const productReducer = createReducer(
   INITIAL_STATE,
   //TODO : Add state change function
+  
+  on(
+    fromProductAction.LoadProductsSuccess,
+    (state, action) => {
+      return productAdapter.setAll(action.products, {
+        ...state,
+        initialized: true
+      }) 
+     }
+  ),
+  on(
+    fromProductAction.GetProductSuccess,
+    (state, action) => {
+      return productAdapter.addOne(action.product, {
+        ...state
+      }) 
+     }
+  ),
+  on(
+    fromProductAction.SetProductFavoriteSuccess,
+    (state, action) => {
+      return productAdapter.updateOne({id: action.product.id,  changes: action.product }, {
+        ...state
+      }) 
+     }
+  ),
   on(
     fromProductAction.ClearProducts,
     (_) => ({
@@ -19,4 +45,3 @@ export const productReducer = createReducer(
     })
   )
 );
-

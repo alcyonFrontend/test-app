@@ -15,8 +15,8 @@
   </mat-card-content>
   <mat-card-actions>
     <div fxLayout="row" fxLayoutAlign="space-between center">
-      <button mat-icon-button
-              color="accent">
+      <button mat-icon-button (click)="toggleFavorite($event)"
+              [color]="product.favorite ? 'accent' : ''">
         <mat-icon>favorite</mat-icon>
       </button>
       <span class="font-bold">

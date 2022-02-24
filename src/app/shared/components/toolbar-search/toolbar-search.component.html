@@ -9,7 +9,9 @@
                matInput
                placeholder="Search"
                name= "query"
-               [(ngModel)]="query">
+               (keyup)="onChangeQuery($event)"
+               [(ngModel)]="query"
+               >
         <button matSuffix mat-button>
           <mat-icon >search</mat-icon>
         </button>
@@ -17,7 +19,7 @@
 
       <mat-form-field fxFlex.gt-xs="20%">
         <mat-label>Sort by</mat-label>
-        <mat-select>
+        <mat-select (selectionChange)="onChangeSort($event.value)"> 
           <mat-option *ngFor="let sort of sortTypes"
                       [value]="sort.key">
             {{ sort.label }}

@@ -1,7 +1,8 @@
-import {createFeatureSelector, createSelector} from "@ngrx/store";
+import {createFeatureSelector, createSelector, Store, select} from "@ngrx/store";
 import {ProductState} from "@core/states";
 import {AppStateEnum} from "@core/states/app.state";
 import * as fromProductAdapter from "@core/store/adapters/product.adapter";
+import { IProduct } from "@app/core/models";
 
 export const getProductState = createFeatureSelector<ProductState>(AppStateEnum.PRODUCT);
 
@@ -15,6 +16,11 @@ export const selectProductAll = createSelector(
   fromProductAdapter.selectProductAll
 );
 
+export const selectProductById = (productId: string) => createSelector(
+  getProductState,
+  (state: ProductState)  => state.entities[productId]
+);
+ 
 export const selectProductEntities = createSelector(
   getProductState,
   fromProductAdapter.selectProductEntities
@@ -40,4 +46,9 @@ export const selectSortBy = createSelector(
   (state: ProductState) => state && state.sortBy
 );
 
+
+
+
 // TODO: Add more selectors if needed
+
+

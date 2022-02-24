@@ -6,5 +6,6 @@ export interface IProduct {
   price: number;
   picture: string;
   rating: number;
+  favorite: boolean;
   createdAt: string;
 }
